@@ -6,9 +6,10 @@ class LoadingBar{
 		this.domElement.style.left = '0';
 		this.domElement.style.width = '100%';
 		this.domElement.style.height = '100%';
-		this.domElement.style.background = '#000';
+		this.domElement.style.background = '#FF9AB2';
 		this.domElement.style.opacity = '0.7';
 		this.domElement.style.display = 'flex';
+		this.domElement.style.flexDirection = 'column';
 		this.domElement.style.alignItems = 'center';
 		this.domElement.style.justifyContent = 'center';
 		this.domElement.style.zIndex = '1111';
@@ -20,7 +21,7 @@ class LoadingBar{
 		barBase.style.height = '15px';
 		this.domElement.appendChild(barBase);
 		const bar = document.createElement("div");
-		bar.style.background = '#22a';
+		bar.style.background = '#ffffff';
 		bar.style.width = '50%';
 		bar.style.borderRadius = '10px';
 		bar.style.height = '100%';
@@ -29,6 +30,13 @@ class LoadingBar{
 		this.progressBar = bar;
 		
 		document.body.appendChild(this.domElement);
+
+		const textElement = document.createElement("div"); 
+		textElement.style.color = '#ffffff';
+		textElement.style.fontSize = '20px'; 
+		textElement.style.marginBottom = '20px'; /
+		textElement.textContent = 'Experience VR Ahead'; 
+		this.domElement.appendChild(textElement);
 		
 		function onprogress(delta){
 			const progress = delta*100;
